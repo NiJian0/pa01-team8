@@ -32,7 +32,7 @@ class Schedule():
         return Schedule([course for course in self.courses if course['instructor'][2] in emails])
 
     def term(self,terms):
-        ''' email returns the courses in a list of term'''
+        ''' term returns the courses in a list of term'''
         return Schedule([course for course in self.courses if course['term'] in terms])
 
     def enrolled(self,vals):
@@ -43,6 +43,19 @@ class Schedule():
         ''' subject filters the courses by subject '''
         return Schedule([course for course in self.courses if course['subject'] in subjects])
 
+    def title(self,phrase):
+        ''' title filters courses containing the phrase in their title'''
+        pass
+         
+    def description(self,phrase):
+        ''' filters courses containing the phrase in the description'''
+        pass
+
+    def customized():
+        '''everyone create one'''
+        pass
+
+        
     def sort(self,field):
         if field=='subject':
             return Schedule(sorted(self.courses, key= lambda course: course['subject']))
