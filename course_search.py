@@ -62,8 +62,8 @@ def print_course(course):
     '''
     print_course prints a brief description of the course 
     '''
-    print(course['subject'],course['coursenum'],course['section'],
-          course['name'],course['term'],course['instructor'])
+    # print(course['subject'],course['coursenum'],course['section'],
+    #       course['name'],course['term'],course['instructor'])
 
 if __name__ == '__main__':
     topmenu()
