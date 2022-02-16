@@ -57,6 +57,7 @@ def topmenu():
             print_course(course)
         print('\n'*3)
 
+
 def print_course(course):
     '''
     print_course prints a brief description of the course 
