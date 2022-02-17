@@ -45,10 +45,11 @@ class Schedule():
 
     def title(self,phrase):
         ''' title filters courses containing the phrase in their title'''
-        pass
+        return Schedule([course for course in self.courses if phrase in course['name']])
          
     def description(self,phrase):
         ''' filters courses containing the phrase in the description'''
+        return Schedule([course for course in self.courses if phrase in course['description'])
         pass
 
     def customized():
