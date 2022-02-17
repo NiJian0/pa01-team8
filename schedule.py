@@ -45,13 +45,21 @@ class Schedule():
 
     def title(self,phrase):
         ''' title filters courses containing the phrase in their title'''
+<<<<<<< HEAD
         return Schedule([course for course in self.courses if phrase in course['name']])
+=======
+        return 
+>>>>>>> 46eff61305f4d78e4bec6c0ab2f3df6c51c57d10
          
     def description(self,phrase):
         ''' filters courses containing the phrase in the description'''
         return Schedule([course for course in self.courses if phrase in course['description'])
         pass
 
+    def limit(self, limitNum):
+        ''' filters courses with a limit greater than that of the phrase'''
+        return Schedule([course for course in self.courses if int(course['limit']) >= int(limitNum)])
+        
     def customized():
         '''everyone create one'''
         pass
@@ -63,4 +71,3 @@ class Schedule():
         else:
             print("can't sort by "+str(field)+" yet")
             return self
- 
