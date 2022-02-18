@@ -47,9 +47,19 @@ def topmenu():
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
-        elif command in ['i','instructor']:
             
-            option = input("use email or lastname:")
+            
+                 
+#         course  -- filter by subject/coursenumber
+#         instructor -- filter by instructor email or lastname
+#         title -- filter by phrase in the title
+#         description -- filter by phrase in the description
+#         Create your own filter (each team member creates their own)
+
+
+
+        elif command in ['i','instructor']:
+            option = input("enter 'email' or 'lastname' to continue:")
             if option in ['e', 'email']:
                 instructor = input("enter an instructor's email:")
                 schedule = schedule.email([instructor])
@@ -78,11 +88,7 @@ def print_course(course):
     print_course prints a brief description of the course 
     '''
     print(course['subject'],course['coursenum'],course['section'],
-<<<<<<< HEAD
-          course['name'],course['term'],course['instructor'])
-=======
            course['name'],course['term'],course['instructor'])
->>>>>>> 5459c1ab20d8f4e3b34e4bb1cc4015119e4f5890
 
 if __name__ == '__main__':
     topmenu()
