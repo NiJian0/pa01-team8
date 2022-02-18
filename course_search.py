@@ -14,6 +14,7 @@ TOP_LEVEL_MENU = '''
 quit
 reset
 term  (filter by term)
+enrolled (filter by enrollment)
 course (filter by coursenum, e.g. COSI 103a)
 instructor (filter by instructor)
 subject (filter by subject, e.g. COSI, or LALS)
@@ -60,6 +61,12 @@ def topmenu():
             else:
                 print('command',command,'is not supported')
                 continue
+            
+        elif command in ['e','enrolled']:
+            val1 = int(input("enter a min range integer in range(5,1000):"))
+            val2 = int(input("enter a max range integer in range(5,1000):"))   
+            schedule = schedule.enrolled(range(val1,val2))
+            
             
         
         else:

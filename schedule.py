@@ -62,10 +62,7 @@ class Schedule():
         '''everyone create one'''
         pass
 
-    def code_start_with_3 (self):
-        '''filters for course codes that start with a "3"'''
-        return Schedule([course for course in self.courses if course['code'][1][0]] == 3)
-
+        
     def sort(self,field):
         if field=='subject':
             return Schedule(sorted(self.courses, key= lambda course: course['subject']))
