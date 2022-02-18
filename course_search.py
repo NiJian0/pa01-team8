@@ -2,6 +2,7 @@
 course_search is a Python script using a terminal based menu to help
 students search for courses they might want to take at Brandeis
 '''
+#Lu Lu likes this project
 
 from schedule import Schedule
 import sys
@@ -109,4 +110,5 @@ def print_course(course):
 
 if __name__ == '__main__':
     topmenu()
+
 
