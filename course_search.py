@@ -52,8 +52,14 @@ def topmenu():
             
                  
 #         course  -- filter by subject/coursenumber
-#         title -- filter by phrase in the title
-#         description -- filter by phrase in the description
+        #title -- filter by phrase in the title
+        elif command == 'title':
+            option = input("enter the phrase that you want to search in the title")
+            schedule = schedule.title(option)
+        #description -- filter by phrase in the description
+        elif command == 'description':
+            option = input("enter the phrase that you want to search in the description")
+            schedule = schedule.description(option)
 #         Create your own filter (each team member creates their own)
 
 
