@@ -66,22 +66,23 @@ def topmenu():
 
         #instructor -- filter by instructor email or lastname
         elif command in ['i','instructor']:
-            option = input("enter 'email' or 'lastname' to continue: ")
+            option = input("enter 'email' or 'lastname' to continue:")
             if option in ['e', 'email']:
                 instructor = input("enter an instructor's email:")
                 schedule = schedule.email([instructor])
                 
             elif option in ['l', 'lastname']:
-                instructor = input("enter an instructor's lastname: ")
+                instructor = input("enter an instructor's lastname:")
                 schedule = schedule.lastname([instructor])
             else:
                 print('command',command,'is not supported')
                 continue
         #days -- filter by the days
         elif command in ['d', 'digit']:
-            digit = input ("enter the number that the code starts with ")
+            digit = input ("enter the the number that the code starts with")
 
             schedule = schedule.code_start_with_num(digit)
+<<<<<<< HEAD
 <<<<<<< HEAD
         #course -- filter by courses
         elif command in ['c','course']:
@@ -108,6 +109,9 @@ def topmenu():
             
             
 >>>>>>> b4357a7204f2eca0273dfb4155e7e432f1631828
+=======
+            
+>>>>>>> parent of 3d7d1f6 (implemented a few missing items)
         
         else:
             print('command',command,'is not supported')

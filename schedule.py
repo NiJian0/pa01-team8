@@ -50,6 +50,7 @@ class Schedule():
     def description(self,phrase):
         ''' filters courses containing the phrase in the description'''
         return Schedule([course for course in self.courses if phrase in course['description']])
+        pass
 
     def limit(self, limitNum):
         ''' filters courses with a limit greater than that of the limit input'''
