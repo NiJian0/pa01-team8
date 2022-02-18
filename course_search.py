@@ -82,8 +82,6 @@ def topmenu():
             digit = input ("enter the the number that the code starts with")
 
             schedule = schedule.code_start_with_num(digit)
-<<<<<<< HEAD
-<<<<<<< HEAD
         #course -- filter by courses
         elif command in ['c','course']:
             subject = input('enter subject ')
@@ -99,20 +97,11 @@ def topmenu():
         #limit -- filter by the limit of a section
         elif command in ['l','limit']:
             num = input('enter minimum limit for courses ')
-            schedule = schedule.description(num)
-=======
-            
+            schedule = schedule.description(num)            
         elif command in ['e','enrolled']:
             val1 = int(input("enter a min range integer in range(5,1000):"))
             val2 = int(input("enter a max range integer in range(5,1000):"))   
             schedule = schedule.enrolled(range(val1,val2))
-            
-            
->>>>>>> b4357a7204f2eca0273dfb4155e7e432f1631828
-=======
-            
->>>>>>> parent of 3d7d1f6 (implemented a few missing items)
-        
         else:
             print('command',command,'is not supported')
             continue
