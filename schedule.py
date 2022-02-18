@@ -56,9 +56,9 @@ class Schedule():
         ''' filters courses with a limit greater than that of the limit input'''
         return Schedule([course for course in self.courses if int(course['limit']) >= int(limitNum)])
 
-    def code_start_with_3 (self):
-        '''filters for course codes that start with a "3"'''
-        return Schedule([course for course in self.courses if course['code'][1][0]] == 3)
+    def code_start_with_num (self, initial_digit):
+        '''filters for course codes that start with a certain digit'''
+        return Schedule([course for course in self.courses if course['code'][1][0] == str(initial_digit)])
 
     def sort(self,field):
         if field=='subject':

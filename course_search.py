@@ -51,13 +51,12 @@ def topmenu():
             
                  
 #         course  -- filter by subject/coursenumber
-#         instructor -- filter by instructor email or lastname
 #         title -- filter by phrase in the title
 #         description -- filter by phrase in the description
 #         Create your own filter (each team member creates their own)
 
 
-
+        #instructor -- filter by instructor email or lastname
         elif command in ['i','instructor']:
             option = input("enter 'email' or 'lastname' to continue:")
             if option in ['e', 'email']:
@@ -70,6 +69,11 @@ def topmenu():
             else:
                 print('command',command,'is not supported')
                 continue
+        #days -- filter by the days
+        elif command in ['d', 'digit']:
+            digit = input ("enter the the number that the code starts with")
+
+            schedule = schedule.code_start_with_num(digit)
             
         
         else:
