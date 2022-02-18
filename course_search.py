@@ -2,6 +2,7 @@
 course_search is a Python script using a terminal based menu to help
 students search for courses they might want to take at Brandeis
 '''
+#Lu Lu likes this project
 
 from schedule import Schedule
 import sys
@@ -14,6 +15,7 @@ TOP_LEVEL_MENU = '''
 quit
 reset
 term  (filter by term)
+enrolled (filter by enrollment)
 course (filter by coursenum, e.g. COSI 103a)
 instructor (filter by instructor)
 subject (filter by subject, e.g. COSI, or LALS)
@@ -51,8 +53,14 @@ def topmenu():
             
                  
 #         course  -- filter by subject/coursenumber
-#         title -- filter by phrase in the title
-#         description -- filter by phrase in the description
+        #title -- filter by phrase in the title
+        elif command == 'title':
+            option = input("enter the phrase that you want to search in the title")
+            schedule = schedule.title(option)
+        #description -- filter by phrase in the description
+        elif command == 'description':
+            option = input("enter the phrase that you want to search in the description")
+            schedule = schedule.description(option)
 #         Create your own filter (each team member creates their own)
 
 
@@ -74,6 +82,7 @@ def topmenu():
             digit = input ("enter the number that the code starts with ")
 
             schedule = schedule.code_start_with_num(digit)
+<<<<<<< HEAD
         #course -- filter by courses
         elif command in ['c','course']:
             subject = input('enter subject ')
@@ -90,6 +99,15 @@ def topmenu():
         elif command in ['l','limit']:
             num = input('enter minimum limit for courses ')
             schedule = schedule.description(num)
+=======
+            
+        elif command in ['e','enrolled']:
+            val1 = int(input("enter a min range integer in range(5,1000):"))
+            val2 = int(input("enter a max range integer in range(5,1000):"))   
+            schedule = schedule.enrolled(range(val1,val2))
+            
+            
+>>>>>>> b4357a7204f2eca0273dfb4155e7e432f1631828
         
         else:
             print('command',command,'is not supported')
@@ -111,4 +129,5 @@ def print_course(course):
 
 if __name__ == '__main__':
     topmenu()
+
 
