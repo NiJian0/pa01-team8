@@ -65,3 +65,6 @@ class Schedule():
         else:
             print("can't sort by "+str(field)+" yet")
             return self
+    def section(self, status):
+        if status in ['open','close']:
+            return Schedule([course for course in self.courses if course['status_text'] == status])
