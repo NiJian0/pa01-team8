@@ -58,23 +58,38 @@ def topmenu():
 
         #instructor -- filter by instructor email or lastname
         elif command in ['i','instructor']:
-            option = input("enter 'email' or 'lastname' to continue:")
+            option = input("enter 'email' or 'lastname' to continue: ")
             if option in ['e', 'email']:
                 instructor = input("enter an instructor's email:")
                 schedule = schedule.email([instructor])
                 
             elif option in ['l', 'lastname']:
-                instructor = input("enter an instructor's lastname:")
+                instructor = input("enter an instructor's lastname: ")
                 schedule = schedule.lastname([instructor])
             else:
                 print('command',command,'is not supported')
                 continue
         #days -- filter by the days
         elif command in ['d', 'digit']:
-            digit = input ("enter the the number that the code starts with")
+            digit = input ("enter the number that the code starts with ")
 
             schedule = schedule.code_start_with_num(digit)
-            
+        #course -- filter by courses
+        elif command in ['c','course']:
+            subject = input('enter subject ')
+            schedule = schedule.subject[subject]
+        #title -- filter by phrases in title
+        elif command in ['t','title']:
+            title = input('enter phrase ')
+            schedule = schedule.title(title)
+        #description -- filter by phrase in description
+        elif command in ['d','description']:
+            desc = input('enter description ')
+            schedule = schedule.description(desc)
+        #limit -- filter by the limit of a section
+        elif command in ['l','limit']:
+            num = input('enter minimum limit for courses ')
+            schedule = schedule.description(num)
         
         else:
             print('command',command,'is not supported')
