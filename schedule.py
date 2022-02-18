@@ -2,7 +2,6 @@
 schedule maintains a list of courses with features for operating on that list
 by filtering, mapping, printing, etc.
 '''
-
 import json
 
 class Schedule():
