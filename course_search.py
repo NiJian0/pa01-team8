@@ -48,9 +48,18 @@ def topmenu():
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
-        elif command in ['i','instructor']:
             
-            option = input("use email or lastname:")
+            
+                 
+#         course  -- filter by subject/coursenumber
+#         title -- filter by phrase in the title
+#         description -- filter by phrase in the description
+#         Create your own filter (each team member creates their own)
+
+
+        #instructor -- filter by instructor email or lastname
+        elif command in ['i','instructor']:
+            option = input("enter 'email' or 'lastname' to continue:")
             if option in ['e', 'email']:
                 instructor = input("enter an instructor's email:")
                 schedule = schedule.email([instructor])
@@ -61,6 +70,11 @@ def topmenu():
             else:
                 print('command',command,'is not supported')
                 continue
+        #days -- filter by the days
+        elif command in ['d', 'digit']:
+            digit = input ("enter the the number that the code starts with")
+
+            schedule = schedule.code_start_with_num(digit)
             
         elif command in ['e','enrolled']:
             val1 = int(input("enter a min range integer in range(5,1000):"))
